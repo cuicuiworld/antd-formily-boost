@@ -1,7 +1,6 @@
 import { Form } from '@formily/core';
 import useQuery, { UseQueryRequest } from './useQuery';
 import useRequest from './useRequest';
-import Result, { ResultSuccess, ResultFail } from './Result';
 
 export type UseQueryDetailProps = {
     detail: any;

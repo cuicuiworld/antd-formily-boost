@@ -1,6 +1,6 @@
 import { createForm, onFieldReact } from '@formily/core';
 import { createSchemaField, FormConsumer, observer } from '@formily/react';
-import { Label, Table, Link, SpaceDivider } from 'antd-formily-boost';
+import { Table } from 'antd-formily-boost';
 import { Form, FormItem, Input, Select, Space } from '@formily/antd';
 import { useMemo } from 'react';
 import { observable } from '@formily/reactive';
@@ -12,9 +12,7 @@ const SchemaField = createSchemaField({
         Input,
         Select,
         Table,
-        Label,
-        Link,
-        SpaceDivider,
+        Space,
     },
 });
 
@@ -144,7 +142,7 @@ const itemsChildrenRow = (
                 refColumnName: 'operation',
             }}
         >
-            <SchemaField.Void x-component="SpaceDivider">
+            <SchemaField.Void x-component="Space">
                 <SchemaField.Void x-component={'Table.MoveUp'} />
                 <SchemaField.Void x-component={'Table.MoveDown'} />
                 <SchemaField.Void x-component={'Table.Remove'} />
@@ -190,8 +188,12 @@ const productsChildrenRow = (
                 title={'总数'}
                 required={true}
                 name="count"
-                x-component="Label"
+                x-component="Input"
                 x-decorator="FormItem"
+                x-component-props={{
+                    readOnly: true,
+                    bordered: false,
+                }}
             />
         </SchemaField.Void>
         <SchemaField.Void
@@ -201,7 +203,7 @@ const productsChildrenRow = (
                 refColumnName: 'operation',
             }}
         >
-            <SchemaField.Void title="操作" x-component="SpaceDivider">
+            <SchemaField.Void title="操作" x-component="Space">
                 <SchemaField.Void
                     x-component={'Table.SubtreeAddition'}
                     x-component-props={{
@@ -304,10 +306,7 @@ export default observer(() => {
                             title="操作"
                             x-component="Table.Column"
                         >
-                            <SchemaField.Void
-                                title="操作"
-                                x-component="SpaceDivider"
-                            >
+                            <SchemaField.Void title="操作" x-component="Space">
                                 <SchemaField.Void
                                     x-component={'Table.SubtreeAddition'}
                                     x-component-props={{

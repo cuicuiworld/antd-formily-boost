@@ -47,7 +47,7 @@ npm start
 ```tsx | pure
 import { createForm, onFieldReact } from '@formily/core';
 import { createSchemaField, FormConsumer, Schema } from '@formily/react';
-import { Label, Table, Link, SpaceDivider } from 'antd-formily-boost';
+import { Table } from 'antd-formily-boost';
 import { Form, FormItem, Input, Select, Space } from '@formily/antd';
 import React, { useMemo } from 'react';
 import { observable } from '@formily/reactive';
@@ -60,9 +60,6 @@ const SchemaField = createSchemaField({
         Input,
         Select,
         Table,
-        Label,
-        Link,
-        SpaceDivider,
     },
 });
 
@@ -128,7 +125,7 @@ export default () => {
                             >
                                 <SchemaField.String
                                     name="name"
-                                    x-component={'Label'}
+                                    x-component={'Input'}
                                 />
                             </SchemaField.Void>
 
@@ -141,7 +138,7 @@ export default () => {
                             >
                                 <SchemaField.String
                                     name="age"
-                                    x-component={'Label'}
+                                    x-component={'Input'}
                                 />
                             </SchemaField.Void>
                         </SchemaField.Void>

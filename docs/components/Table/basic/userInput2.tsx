@@ -1,11 +1,6 @@
 import { createForm } from '@formily/core';
 import { createSchemaField, FormConsumer } from '@formily/react';
-import {
-    Label,
-    Table,
-    getDataInIndex,
-    setDataInIndex,
-} from 'antd-formily-boost';
+import { Table } from 'antd-formily-boost';
 import { Form, FormItem, Select, Input } from '@formily/antd';
 import React, { useMemo } from 'react';
 import { observable } from '@formily/reactive';
@@ -14,7 +9,6 @@ const SchemaField = createSchemaField({
         FormItem,
         Select,
         Table,
-        Label,
     },
 });
 

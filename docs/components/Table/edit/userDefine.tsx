@@ -1,6 +1,6 @@
 import { createForm, onFieldReact } from '@formily/core';
 import { createSchemaField, FormConsumer, Schema } from '@formily/react';
-import { Label, Table, Link, SpaceDivider } from 'antd-formily-boost';
+import { Table } from 'antd-formily-boost';
 import { Form, FormItem, Input, Select, Space } from '@formily/antd';
 import { useMemo } from 'react';
 import { observable } from '@formily/reactive';
@@ -12,9 +12,7 @@ const SchemaField = createSchemaField({
         Input,
         Select,
         Table,
-        Label,
-        Link,
-        SpaceDivider,
+        Space,
     },
 });
 
@@ -87,7 +85,7 @@ export default () => {
                         >
                             <SchemaField.Void
                                 name="operation"
-                                x-component={'SpaceDivider'}
+                                x-component={'Space'}
                             >
                                 <SchemaField.Void
                                     x-component={'Table.MoveUp'}

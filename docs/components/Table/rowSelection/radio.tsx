@@ -1,6 +1,6 @@
 import { createForm } from '@formily/core';
 import { createSchemaField, FormConsumer } from '@formily/react';
-import { Label, Table, Link, SpaceDivider } from 'antd-formily-boost';
+import { Table } from 'antd-formily-boost';
 import { Form, FormItem, Input, Select, Space } from '@formily/antd';
 import { Button } from 'antd';
 import { useMemo } from 'react';
@@ -13,9 +13,6 @@ const SchemaField = createSchemaField({
         Input,
         Select,
         Table,
-        Label,
-        Link,
-        SpaceDivider,
     },
 });
 
@@ -69,7 +66,11 @@ export default () => {
                             >
                                 <SchemaField.String
                                     name="name"
-                                    x-component={'Label'}
+                                    x-component={'Input'}
+                                    x-component-props={{
+                                        readOnly: true,
+                                        bordered: false,
+                                    }}
                                 />
                             </SchemaField.Void>
 
@@ -80,7 +81,11 @@ export default () => {
                             >
                                 <SchemaField.String
                                     name="age"
-                                    x-component={'Label'}
+                                    x-component={'Input'}
+                                    x-component-props={{
+                                        readOnly: true,
+                                        bordered: false,
+                                    }}
                                 />
                             </SchemaField.Void>
                         </SchemaField.Void>

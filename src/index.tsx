@@ -1,9 +1,4 @@
-import Label from './Label';
 import Table from './Table';
-import Link from './Link';
-import Tree from './Tree';
-import TreeSelect from './TreeSelect';
-import SpaceDivider from './SpaceDivider';
 import Hoverable from './Hoverable';
 import Result, { ResultSuccess, ResultFail } from './hooks/Result';
 import useQueryTable, {
@@ -36,12 +31,7 @@ import myRequest, { setMyRequestUrlPrefixKey } from './hooks/myRequest';
 import { getDataInIndex, setDataInIndex } from './Table/util';
 
 export {
-    Label,
     Table,
-    Link,
-    SpaceDivider,
-    Tree,
-    TreeSelect,
     Hoverable,
     getDataInIndex,
     setDataInIndex,

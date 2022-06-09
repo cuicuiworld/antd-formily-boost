@@ -1,10 +1,11 @@
 import { createForm, onFieldReact } from '@formily/core';
 import { createSchemaField, FormConsumer, Schema } from '@formily/react';
-import { Label, Table, Link, SpaceDivider } from 'antd-formily-boost';
+import { Table } from 'antd-formily-boost';
 import { Form, FormItem, Input, Select, Space } from '@formily/antd';
 import { useMemo } from 'react';
 import { observable } from '@formily/reactive';
 import React from 'react';
+import { Button } from 'antd';
 
 const SchemaField = createSchemaField({
     components: {
@@ -12,9 +13,8 @@ const SchemaField = createSchemaField({
         Input,
         Select,
         Table,
-        Label,
-        Link,
-        SpaceDivider,
+        Button,
+        Space,
     },
 });
 
@@ -69,7 +69,11 @@ export default () => {
                         >
                             <SchemaField.String
                                 name="age"
-                                x-component={'Label'}
+                                x-component={'Input'}
+                                x-component-props={{
+                                    readOnly: true,
+                                    bordered: false,
+                                }}
                             />
                         </SchemaField.Void>
                         <SchemaField.Void
@@ -79,17 +83,23 @@ export default () => {
                         >
                             <SchemaField.Void
                                 name="operation"
-                                x-component={'SpaceDivider'}
+                                x-component={'Space'}
                             >
                                 <SchemaField.Void
                                     name="edit"
                                     title="编辑"
-                                    x-component={'Link'}
+                                    x-component={'Button'}
+                                    x-component-props={{
+                                        type: 'link',
+                                    }}
                                 />
                                 <SchemaField.Void
                                     name="delete"
                                     title="删除"
-                                    x-component={'Link'}
+                                    x-component={'Button'}
+                                    x-component-props={{
+                                        type: 'link',
+                                    }}
                                 />
                             </SchemaField.Void>
                         </SchemaField.Void>
@@ -100,7 +110,11 @@ export default () => {
                             <SchemaField.String
                                 name="phone"
                                 title="电话"
-                                x-component={'Label'}
+                                x-component={'Input'}
+                                x-component-props={{
+                                    readOnly: true,
+                                    bordered: false,
+                                }}
                             />
                         </SchemaField.Void>
                     </SchemaField.Void>

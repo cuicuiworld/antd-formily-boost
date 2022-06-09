@@ -1,6 +1,6 @@
 import { createForm, onFieldReact } from '@formily/core';
 import { createSchemaField, FormConsumer } from '@formily/react';
-import { Label, Table, Link, SpaceDivider } from 'antd-formily-boost';
+import { Table } from 'antd-formily-boost';
 import { Form, FormItem, Input, Select } from '@formily/antd';
 import { useMemo } from 'react';
 import { observable } from '@formily/reactive';
@@ -13,9 +13,6 @@ const SchemaField = createSchemaField({
         Input,
         Select,
         Table,
-        Label,
-        Link,
-        SpaceDivider,
     },
 });
 
@@ -160,7 +157,11 @@ const productorsChildrenRow = (
             <SchemaField.String
                 //这个列不能用labelIndex，因为有effects
                 name="count"
-                x-component="Label"
+                x-component="Input"
+                x-component-props={{
+                    readOnly: true,
+                    bordered: false,
+                }}
             />
         </SchemaField.Void>
         {itemsChildrenRow}
@@ -175,8 +176,10 @@ export default () => {
                     const fieldNormal = field as Field;
                     let items = field.query('.items').value();
                     let result = 0;
-                    for (let i = 0; i != items.length; i++) {
-                        result += parseInt(items[i].count);
+                    if (items) {
+                        for (let i = 0; i != items.length; i++) {
+                            result += parseInt(items[i].count);
+                        }
                     }
                     fieldNormal.value = result;
                 });

@@ -1,7 +1,7 @@
 import { createForm } from '@formily/core';
 import { createSchemaField } from '@formily/react';
-import { Label, Table, Link, SpaceDivider } from 'antd-formily-boost';
-import { Form, FormItem, Input, Select } from '@formily/antd';
+import { Table } from 'antd-formily-boost';
+import { Form, FormItem, Select } from '@formily/antd';
 import { useMemo, useCallback } from 'react';
 import { observable } from '@formily/reactive';
 
@@ -10,9 +10,6 @@ const SchemaField = createSchemaField({
         FormItem,
         Select,
         Table,
-        Label,
-        Link,
-        SpaceDivider,
     },
 });
 
