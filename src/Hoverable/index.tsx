@@ -5,16 +5,19 @@ const HoverableContext = createContext(false);
 type HoverablePropsType = {
     style?: React.CSSProperties;
     className?: string;
+    children?: React.ReactNode;
 };
 
 type EnterPropsType = {
     style?: React.CSSProperties;
     className?: string;
+    children?: React.ReactNode;
 };
 
 type LeavePropsType = {
     style?: React.CSSProperties;
     className?: string;
+    children?: React.ReactNode;
 };
 
 type HoverableType = React.FC<HoverablePropsType> & {
