@@ -1,35 +1,41 @@
-import { useArray, useArrayIndex } from './Context';
-import React, { Fragment } from 'react';
-import { PlusOutlined } from '@ant-design/icons';
+import { useArray } from './Context';
+import React from 'react';
 import { Button } from 'antd';
 
 export type MyAdditionProps = {
     onClick?: () => {};
     title?: string;
     icon?: React.ReactNode;
+    defaultValue?: any;
+    method?: 'push' | 'unshift';
 };
-const MyAddition: React.FC<MyAdditionProps> = (props) => {
+const MyAddition: React.FC<MyAdditionProps> = ({
+    onClick,
+    icon,
+    title,
+    defaultValue,
+    method = 'push',
+    ...rest
+}) => {
     const array = useArray();
-    const onClick = props.onClick
-        ? props.onClick
+    const _onClick = onClick
+        ? onClick
         : () => {
-              array.push({});
+              const defaultVal =
+                  defaultValue !== undefined && defaultValue !== null
+                      ? defaultValue
+                      : {};
+              if (method === 'push') {
+                  array.push(defaultVal);
+              } else {
+                  array.unshift(defaultVal);
+              }
           };
-    let icon = props.icon ? (
-        props.icon
-    ) : (
-        <PlusOutlined style={{ fontSize: '12px' }} />
-    );
-    let title = props.title || '添加';
+    let _icon = icon ? icon : <span />;
+    let _title = title || '';
     return (
-        <Button
-            onClick={onClick}
-            type="dashed"
-            icon={icon}
-            shape="round"
-            style={{ display: 'block', width: '100%', marginTop: '10px' }}
-        >
-            {title}
+        <Button onClick={_onClick} icon={_icon} block type="dashed" {...rest}>
+            {_title}
         </Button>
     );
 };

@@ -1,13 +1,12 @@
 import { useArray, useArrayIndex, useArrayRecursive } from './Context';
-import React, { Fragment, MouseEvent } from 'react';
-import { PlusCircleOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
-import { getDataInIndex, parseIndex } from '../util';
+import React, { MouseEvent } from 'react';
+import { getDataInIndex } from '../util';
 
 export type MySubtreeAdditionProps = {
     onClick?: (data: any) => {};
     title?: string;
     icon?: React.ReactNode;
+    defaultValue?: any;
 };
 const MySubtreeAddition: React.FC<MySubtreeAdditionProps> = (props) => {
     const array = useArray();
@@ -30,14 +29,14 @@ const MySubtreeAddition: React.FC<MySubtreeAdditionProps> = (props) => {
             //传递onClick的数据
             props.onClick(data[recurIndex]);
         } else {
-            data[recurIndex].push({});
+            const defaultVal =
+                props.defaultValue !== undefined && props.defaultValue !== null
+                    ? props.defaultValue
+                    : {};
+            data[recurIndex].push(defaultVal);
         }
     };
-    let icon = props.icon ? (
-        props.icon
-    ) : (
-        <PlusCircleOutlined style={{ fontSize: '16px' }} />
-    );
+    let icon = props.icon ? props.icon : <span />;
     let title = props.title;
     return (
         <a onClick={onClick}>
