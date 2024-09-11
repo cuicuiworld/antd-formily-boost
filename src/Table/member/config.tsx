@@ -180,7 +180,13 @@ function getColumnSchemaInner(
         let columnField = columnConfigObject[schema.name!];
         let component = schema['x-component'];
         let isVisible = getSingleColumnConfig(columnField, schema, 'x-visible');
+        let isDisplay = ['hidden', 'none'].includes(
+            getSingleColumnConfig(columnField, schema, 'x-display'),
+        );
         if (isVisible == false) {
+            return [];
+        }
+        if (isDisplay) {
             return [];
         }
         let columnBase = {
