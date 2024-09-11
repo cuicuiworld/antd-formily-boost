@@ -19,6 +19,7 @@ class ColumnPropsKeys implements KeyProps<ColumnProps> {
     ellipsis = true;
     fixed = true;
     labelIndex = true;
+    title = true;
 }
 
 const Column: React.FC<ColumnProps> = (props) => {

@@ -2,7 +2,7 @@
 
 ## 声明
 
-该库因为设计问题，目前已声明为废弃状态，与最新版本的Formily也有兼容性问题，不再提供后续更新与支持
+该库因为设计问题，目前已声明为废弃状态，与最新版本的 Formily 也有兼容性问题，不再提供后续更新与支持
 
 ```js
 "@formily/antd": "2.0.9",
@@ -14,7 +14,7 @@
 "@formily/react": "2.0.9",
 ```
 
-现有的antd-formily-boost库仅支持@formily的2.0.9版本
+现有的 antd-formily-boost 库仅支持@formily 的 2.0.9 版本
 
 ## 特点
 
@@ -265,7 +265,7 @@ export default () => {
 ## 使用
 
 ```bash
-$ npm install antd-formily-boost  --save
+$ npm install @gui-one/antd-formily-boost  --save
 ```
 
 直接包含以上包即可
