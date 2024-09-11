@@ -1,6 +1,6 @@
 import { createForm } from '@formily/core';
 import { createSchemaField, FormConsumer, Schema } from '@formily/react';
-import { Table } from 'antd-formily-boost';
+import { Table } from '@gui-one/antd-formily-boost';
 import { PaginationType } from 'antd-formily-boost/Table';
 import { Form, FormItem, Input, Select } from '@formily/antd';
 import { useMemo } from 'react';

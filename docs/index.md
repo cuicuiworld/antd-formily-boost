@@ -44,7 +44,7 @@ footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](http
 ```tsx
 import { createForm, onFieldReact } from '@formily/core';
 import { createSchemaField, FormConsumer, Schema } from '@formily/react';
-import { Table } from 'antd-formily-boost';
+import { Table } from '@gui-one/antd-formily-boost';
 import { Form, FormItem, Input, Select, Space } from '@formily/antd';
 import React, { useMemo } from 'react';
 import { observable } from '@formily/reactive';
@@ -151,7 +151,7 @@ antd-formily-boost 从[Formily](https://v2.formilyjs.org/)的先进的 Reactive 
 ```tsx | pure
 import { createForm, onFieldReact } from '@formily/core';
 import { createSchemaField, FormConsumer, Schema } from '@formily/react';
-import { Table } from 'antd-formily-boost';
+import { Table } from '@gui-one/antd-formily-boost';
 import { Form, FormItem, Input, Select, Space } from '@formily/antd';
 import React, { useMemo } from 'react';
 import { observable } from '@formily/reactive';

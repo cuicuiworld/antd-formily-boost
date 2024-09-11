@@ -1,6 +1,6 @@
 import { createForm } from '@formily/core';
 import { createSchemaField } from '@formily/react';
-import { Table } from 'antd-formily-boost';
+import { Table } from '@gui-one/antd-formily-boost';
 import { Form, FormItem, Select } from '@formily/antd';
 import { useMemo, useCallback } from 'react';
 import { observable } from '@formily/reactive';

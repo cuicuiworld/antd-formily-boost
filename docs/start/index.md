@@ -47,7 +47,7 @@ npm start
 ```tsx | pure
 import { createForm, onFieldReact } from '@formily/core';
 import { createSchemaField, FormConsumer, Schema } from '@formily/react';
-import { Table } from 'antd-formily-boost';
+import { Table } from '@gui-one/antd-formily-boost';
 import { Form, FormItem, Input, Select, Space } from '@formily/antd';
 import React, { useMemo } from 'react';
 import { observable } from '@formily/reactive';
